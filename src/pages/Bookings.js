@@ -57,17 +57,21 @@ class BookingsPage extends Component {
         this.setState({ isLoading: false });
       });
   };
+
   deleteBookingHandler = bookingId => {
     this.setState({ isLoading: true });
     const requestBody = {
       query: `
-          mutation {
-            cancelBooking(bookingId: "${bookingId}") {
+          mutation CancelBooking($id: ID!) {
+            cancelBooking(bookingId: $id) {
             _id
              title
             }
           }
-        `
+        `,
+      variables: {
+        id: bookingId
+      }
     };
 
     fetch('http://localhost:8000/graphql', {
@@ -98,7 +102,6 @@ class BookingsPage extends Component {
       });
   };
 
-
   render() {
     return (
       <React.Fragment>
@@ -106,9 +109,9 @@ class BookingsPage extends Component {
           <Spinner />
         ) : (
           <BookingList
-          bookings={this.state.bookings}
-          onDelete={this.deleteBookingHandler}
-        />
+            bookings={this.state.bookings}
+            onDelete={this.deleteBookingHandler}
+          />
         )}
       </React.Fragment>
     );
