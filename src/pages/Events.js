@@ -90,6 +90,7 @@ class EventsPage extends Component {
         return res.json();
       })
       .then(resData => {
+        console.log(resData)
         this.setState(prevState => {
           const updatedEvents = [...prevState.events];
           updatedEvents.push({
@@ -230,15 +231,15 @@ class EventsPage extends Component {
           >
             <form>
               <div className="form-control">
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title">Event Title</label>
                 <input type="text" id="title" ref={this.titleElRef} />
               </div>
               <div className="form-control">
-                <label htmlFor="price">Price</label>
+                <label htmlFor="price">Difficulty Level</label>
                 <input type="number" id="price" ref={this.priceElRef} />
               </div>
               <div className="form-control">
-                <label htmlFor="date">Date</label>
+                <label htmlFor="date">Date of Event</label>
                 <input type="datetime-local" id="date" ref={this.dateElRef} />
               </div>
               <div className="form-control">
@@ -273,7 +274,7 @@ class EventsPage extends Component {
           <div className="events-control">
             <p>Share your own Events!</p>
             <button className="btn" onClick={this.startCreateEventHandler}>
-              Create Event
+              Create an Event
             </button>
           </div>
         )}
