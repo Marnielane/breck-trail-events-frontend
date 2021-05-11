@@ -264,7 +264,7 @@ class EventsPage extends Component {
           >
             <h1>{this.state.selectedEvent.title}</h1>
             <h2>
-              ${this.state.selectedEvent.price} -{' '}
+              {this.state.selectedEvent.price} -{' '}
               {new Date(this.state.selectedEvent.date).toLocaleDateString()}
             </h2>
             <p>{this.state.selectedEvent.description}</p>
@@ -272,7 +272,9 @@ class EventsPage extends Component {
         )}
         {this.context.token && (
           <div className="events-control">
-            <p>Share your own Events!</p>
+            <p className="banner">Through your volunteer efforts, open spaces, trails, 
+              historic sites and ecologically sensitive areas are maintained and restored, 
+              thereby creating fun opportunities for outdoor enthusiasts of all ages and abilities.</p>
             <button className="btn" onClick={this.startCreateEventHandler}>
               Create an Event
             </button>
