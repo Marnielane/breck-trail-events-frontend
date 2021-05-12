@@ -32,14 +32,16 @@ body {
   box-sizing: border-box;
 }
 
+.main-navigation__logo {
+  display: flex;
+  align-items: center;
+}
+
 .main-navigation__logo h1 {
-  /* position: fixed; */
-  float:left;
   padding:5px 0;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
-  margin-left: -400px;
+  margin-left: 20px;
   font-size: 1.5rem;
   color: rgb(2, 170, 170);
 }

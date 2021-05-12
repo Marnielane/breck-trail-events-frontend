@@ -63,7 +63,7 @@ class BookingsPage extends Component {
     const requestBody = {
       query:  `
         mutation CancelBooking($id: ID!) {
-          cancelBooking(bookingId: $id) {
+          cancelBooking(bookingID: $id) {
           _id
           title
           }

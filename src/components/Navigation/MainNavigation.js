@@ -10,8 +10,9 @@ const mainNavigation = props => (
     {context => {
       return (
         <header className="main-navigation">
-          <img src={Logo} alt="logo" class="logo"/>
+
           <div className="main-navigation__logo">
+            <img src={Logo} alt="logo" class="logo"/>
             <h1>Breck Trail Events</h1>
           </div>
           <nav className="main-navigation__items">
