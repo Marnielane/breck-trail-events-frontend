@@ -5,6 +5,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .logo {
@@ -31,8 +33,13 @@ body {
 }
 
 .main-navigation__logo h1 {
+  /* position: fixed; */
+  float:left;
+  padding:5px 0;
+  align-items: center;
+  justify-content: space-between;
   margin: 0;
-  margin-left: -470px;
+  margin-left: -400px;
   font-size: 1.5rem;
   color: rgb(2, 170, 170);
 }
@@ -56,7 +63,7 @@ body {
 .main-navigation__items a,
 .main-navigation__items button {
   text-decoration: none;
-  color: white;
+  color: aliceblue;
   padding: 0.25rem 0.5rem;
   border: none;
   font: inherit;
@@ -71,7 +78,7 @@ body {
 .main-navigation__items a.active,
 .main-navigation__items button:hover,
 .main-navigation__items button:active {
-  background: #ffffff;
+  background: aliceblue;
   color: #0c3b47;
   border-radius: 5px;
 }

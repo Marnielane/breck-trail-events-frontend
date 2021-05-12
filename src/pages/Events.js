@@ -90,7 +90,6 @@ class EventsPage extends Component {
         return res.json();
       })
       .then(resData => {
-        console.log(resData)
         this.setState(prevState => {
           const updatedEvents = [...prevState.events];
           updatedEvents.push({
@@ -263,8 +262,8 @@ class EventsPage extends Component {
             confirmText={this.context.token ? 'Book' : 'Confirm'}
           >
             <h1>{this.state.selectedEvent.title}</h1>
-            <h2>
-              {this.state.selectedEvent.price} -{' '}
+            <h2 className="difficulty">
+              Difficulty Level {this.state.selectedEvent.price} -{' '}
               {new Date(this.state.selectedEvent.date).toLocaleDateString()}
             </h2>
             <p>{this.state.selectedEvent.description}</p>
@@ -272,8 +271,8 @@ class EventsPage extends Component {
         )}
         {this.context.token && (
           <div className="events-control">
-            <p className="banner">Through your volunteer efforts, open spaces, trails, 
-              historic sites and ecologically sensitive areas are maintained and restored, 
+            <p className="banner">Thanks to your volunteer efforts, open spaces, trails, 
+              historic sites and ecologically sensitive areas continue to be maintained and restored, 
               thereby creating fun opportunities for outdoor enthusiasts of all ages and abilities.</p>
             <button className="btn" onClick={this.startCreateEventHandler}>
               Create an Event
