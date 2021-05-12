@@ -61,14 +61,14 @@ class BookingsPage extends Component {
   deleteBookingHandler = bookingId => {
     this.setState({ isLoading: true });
     const requestBody = {
-      query: `
-          mutation CancelBooking($id: ID!) {
-            cancelBooking(bookingId: $id) {
-            _id
-             title
-            }
+      query:  `
+        mutation CancelBooking($id: ID!) {
+          cancelBooking(bookingID: $id) {
+          _id
+          title
           }
-        `,
+        }
+      `,
       variables: {
         id: bookingId
       }
@@ -83,6 +83,7 @@ class BookingsPage extends Component {
       }
     })
       .then(res => {
+        console.log(res)
         if (res.status !== 200 && res.status !== 201) {
           throw new Error('Failed!');
         }

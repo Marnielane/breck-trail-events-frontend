@@ -3,20 +3,23 @@ import { NavLink } from 'react-router-dom';
 
 import AuthContext from '../../context/auth-context';
 import './MainNavigation.css';
+import Logo from '../../images/brecklogo.png'
 
 const mainNavigation = props => (
   <AuthContext.Consumer>
     {context => {
       return (
         <header className="main-navigation">
+
           <div className="main-navigation__logo">
-            <h1>Friends of Breckenridge Trails</h1>
+            <img src={Logo} alt="logo" class="logo"/>
+            <h1>Breck Trail Events</h1>
           </div>
           <nav className="main-navigation__items">
             <ul>
               {!context.token && (
                 <li>
-                  <NavLink to="/auth">Authenticate</NavLink>
+                  <NavLink to="/auth">Log In</NavLink>
                 </li>
               )}
               <li>
